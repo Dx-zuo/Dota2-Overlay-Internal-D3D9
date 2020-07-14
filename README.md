@@ -8,9 +8,8 @@ The purpose if this program is to notify the user if his current position is vis
 ![alt text](https://i.ibb.co/T8TFdsH/Screenshot-12.png)
 ![alt text](https://i.ibb.co/b2x1WW2/Screenshot-13.png)
 
-The overlay is designed simply using D3D9 renderer.
-
 
 Usage :
 Inject DLL to process
+
 Press END to exit
