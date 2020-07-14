@@ -5,8 +5,8 @@ Universal Hook used for this project(https://github.com/Rebzzel/kiero).
 
 The purpose if this program is to notify the user if his current position is visible to the enemy team.
 
-![alt text](https://i.ibb.co/T8TFdsH/Screenshot-12.png)
-![alt text](https://i.ibb.co/b2x1WW2/Screenshot-13.png)
+![alt text](https://i.ibb.co/BfcqXsr/Screenshot-28.png)
+![alt text](https://i.ibb.co/3pnwzdG/Screenshot-29.png)
 
 
 Usage :
