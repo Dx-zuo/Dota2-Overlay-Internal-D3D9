@@ -1,2 +1,15 @@
 # Dota2-Overlay-Internal-D3D9
- a tool that will display an overlay text if you are Visible/NotVisible by the enemy side. (Internal))
+Note: This program is meant to be an experimental purposes and may also be considered as a 3rd party program, im not responsible for any actions you make.
+
+The purpose if this program is to notify the user if his current position is visible to the enemy team.
+Universal Hook used for this project(https://github.com/Rebzzel/kiero).
+
+![alt text](https://i.ibb.co/T8TFdsH/Screenshot-12.png)
+![alt text](https://i.ibb.co/b2x1WW2/Screenshot-13.png)
+
+The overlay is designed simply using D3D9 renderer.
+
+
+Usage :
+Inject DLL to process
+Press END to exit
