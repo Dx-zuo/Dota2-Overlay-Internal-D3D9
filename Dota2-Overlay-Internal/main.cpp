@@ -4,33 +4,31 @@
 #include "hook.h"
 #include "Draw.h"
 
-//Prototype
+
 std::vector<unsigned int> getOffsetFromText();
 int InitMainHack();
 unsigned int ReadVBE();
 
-//Global Vars
 DWORD ProcId;
 uintptr_t modBase = 0;
 std::vector<unsigned int> offsets;
 uintptr_t dynamicAddr = 0;
+
 HMODULE myModule;
 unsigned int bVbE;
 Draw draw;
-
-
 bool init = false; 
-//Our Endscence Function
 long __stdcall D3D9::hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 {
-	// Initialize
+
 	if (!init)
 	{
 		draw.DrawInit(pDevice);
+		InitMainHack();
 		init = true;
 	}
 
-	// Read Visible by enemy Tag 
+
 	bVbE = ReadVBE();
 	if (bVbE == 0)
 	{
@@ -45,8 +43,7 @@ long __stdcall D3D9::hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 	{
 		draw.DrawTest("Waiting.");
 	}
-
-	if (GetAsyncKeyState(VK_END) & 1)
+	if (GetAsyncKeyState(VK_END))
 	{
 		Hooks::Shutdown();
 	}
@@ -83,9 +80,8 @@ std::vector<unsigned int> getOffsetFromText() {
 	std::vector<std::string> offsets;
 	std::vector<unsigned int> offsetsInt;
 
-	// retrieving temp path
 	CHAR czTempPath[MAX_PATH] = { 0 };
-	GetTempPathA(MAX_PATH, czTempPath); 
+	GetTempPathA(MAX_PATH, czTempPath); // retrieving temp path
 	std::string sPath = czTempPath;
 	sPath += "offs.conf";
 
@@ -110,6 +106,8 @@ std::vector<unsigned int> getOffsetFromText() {
 		buffer >> std::hex >> value;
 		offsetsInt.push_back(value);
 	}
+	offsets.clear();
+	file.close();
 	return offsetsInt;
 }
 

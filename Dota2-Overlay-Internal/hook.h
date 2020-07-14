@@ -8,8 +8,6 @@ namespace Hooks
 {
 	void Init(HMODULE hModule);
 	void Shutdown();
-
-
 }
 
 

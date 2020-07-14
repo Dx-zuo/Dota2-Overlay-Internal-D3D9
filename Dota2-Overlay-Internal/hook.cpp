@@ -2,7 +2,6 @@
 #include "pch.h"
 #include "hook.h"
 
-//Check if config exist in path
 inline bool fileExist(const std::string& name) {
 #pragma warning(suppress : 4996).
 	if (FILE* file = fopen(name.c_str(), "r")) {
@@ -37,6 +36,8 @@ void Hooks::Init(HMODULE hModule)
 
 
 }
+
+
 
 void Hooks::Shutdown()
 {
