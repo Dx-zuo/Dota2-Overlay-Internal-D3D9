@@ -13,7 +13,7 @@ inline bool fileExist(const std::string& name) {
 	}
 }
 
-void Hooks::Init(HMODULE hModule)
+void Hooks::Init()
 {
 	CHAR czTempPath[MAX_PATH] = { 0 };
 	GetTempPathA(MAX_PATH, czTempPath); // retrieving temp path

@@ -16,6 +16,9 @@
     <Filter Include="mem">
       <UniqueIdentifier>{b28993dd-b19d-41cd-a650-d70c8d92d7d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="hooks">
+      <UniqueIdentifier>{56ca158f-836c-408c-a44a-6b70379213f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -30,11 +33,11 @@
     <ClCompile Include="d3d9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="hook.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Draw.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hook.cpp">
+      <Filter>hooks</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,11 +50,11 @@
     <ClInclude Include="d3d9.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="hook.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Draw.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hook.h">
+      <Filter>hooks</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

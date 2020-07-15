@@ -6,7 +6,7 @@
 
 namespace Hooks
 {
-	void Init(HMODULE hModule);
+	void Init();
 	void Shutdown();
 }
 

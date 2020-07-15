@@ -51,24 +51,24 @@ long __stdcall D3D9::hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 }
 
 
+DWORD WINAPI Main(HMODULE hModule) 
+{
+	Hooks::Init();
 
+	while (!GetAsyncKeyState(VK_END)) {
+		Sleep(1);
+	}
+
+	Hooks::Shutdown();
+
+	FreeLibraryAndExitThread(hModule, 0);
+}
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
-	switch (ul_reason_for_call)
-	{
-	case DLL_PROCESS_ATTACH:
+	if (ul_reason_for_call == DLL_PROCESS_ATTACH)
 		DisableThreadLibraryCalls(hModule);
-		CloseHandle(CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)Hooks::Init, hModule, 0, nullptr));
-		break;
-	case DLL_THREAD_ATTACH:
-		break;
-	case DLL_THREAD_DETACH:
-		break;
-	case DLL_PROCESS_DETACH:
-		Hooks::Shutdown();
-		break;
-	}
+		CloseHandle(CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Main, hModule, 0, 0));
 	return TRUE;
 }
 

@@ -25,8 +25,6 @@ namespace D3D9
 	extern HWND hWnd;
 	extern void* vTable[119];
 
-	void InitImGui(LPDIRECT3DDEVICE9 pDevice);
-	LRESULT __stdcall hkWndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 	bool CreateDummyDevice(void** vtable, size_t size);
 	long __stdcall hkEndScene(LPDIRECT3DDEVICE9 pDevice);
 }

@@ -49,3 +49,9 @@ Dota2-Overlay-Internal/x64/Release/vc142.pdb
 x64/Release/Dota2-Overlay-Internal.iobj
 x64/Release/Dota2-Overlay-Internal.ipdb
 x64/Release/Dota2-Overlay-Internal.pdb
+*.ipch
+*.tlog
+*.pdb
+Dota2-Overlay-Internal/x64/Debug/vc142.idb
+x64/Debug/Dota2-Overlay-Internal.ilk
+Dota2-Overlay-Internal/x64/Debug/Dota2-Overlay-Internal.log
