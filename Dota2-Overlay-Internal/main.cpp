@@ -18,9 +18,13 @@ HMODULE myModule;
 unsigned int bVbE;
 Draw draw;
 bool init = false; 
+bool Exit = false;
 long __stdcall D3D9::hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 {
-
+	if (Exit == true)
+	{
+		return oEndScene(pDevice);
+	}
 	if (!init)
 	{
 		draw.DrawInit(pDevice);
@@ -53,11 +57,13 @@ long __stdcall D3D9::hkEndScene(LPDIRECT3DDEVICE9 pDevice)
 
 DWORD WINAPI Main(HMODULE hModule) 
 {
+
 	Hooks::Init();
 
 	while (!GetAsyncKeyState(VK_END)) {
 		Sleep(1);
 	}
+	Exit = true;
 
 	Hooks::Shutdown();
 
